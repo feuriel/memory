@@ -1,0 +1,249 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+#game-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1.8rem 1rem 2rem 1rem;
+}
+
+.game-helper {
+  display: none;
+}
+.mobile-life-span {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0.5rem;
+  font-size: 1.75rem;
+  color: #3e2b50;
+  font-weight: bold;
+  z-index: 1;
+  font-size: 1.4rem;
+}
+
+@media screen and (min-width: 800px) {
+  .game-helper {
+    display: flex;
+    flex-direction: column;
+  }
+  .mobile-life-span {
+    display: none;
+  }
+
+  body {
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+.game-helper button {
+  transform: rotateZ(2deg);
+  padding: 0.8em 1.5em;
+  margin: 1rem;
+  cursor: pointer;
+  color: #3e2b50;
+  background: #fcfcfc;
+  border: none;
+  border-radius: 0.4em;
+
+  text-transform: uppercase;
+  font-size: 1.4em;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  transform-style: preserve-3d;
+  transition: background-color 0.2s ease-in-out;
+  box-shadow: rgba(13, 13, 13, 0.5) 0px 5px 5px;
+}
+
+.game-helper button + button {
+  transform: rotateZ(-3deg);
+}
+
+.game-helper button:hover {
+  background: #f9b5b5;
+}
+
+.icon-menu {
+  --background-color: #745296;
+  --color: #5cc8ff;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 0.75rem;
+  margin: 0.5rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: var(--background-color);
+  color: var(--color);
+  transition: all 0.3s ease-in-out;
+  --offset: -6rem;
+  box-shadow: rgba(13, 13, 13, 0.5) 0px 5px 5px;
+}
+.icon-menu:hover {
+  color: var(--background-color);
+  background: var(--color);
+}
+@media screen and (min-width: 800px) {
+  .icon-menu {
+    display: none;
+  }
+}
+.icon-menu:hover {
+  cursor: pointer;
+}
+
+.icon-restart.show {
+  --background-color: #c39945;
+  --color: blanchedalmond;
+  transform: rotate(0deg) translate(var(--offset)) rotate(0deg);
+}
+
+.icon-twitter.show {
+  --color: white;
+  --background-color: rgb(29, 155, 240); /* the twitter blue */
+  transform: rotate(-90deg) translate(var(--offset)) rotate(90deg);
+}
+
+.icon-highscore.show {
+  --color: #ffff00;
+  --background-color: #feb42f;
+  transform: rotate(-45deg) translate(var(--offset)) rotate(45deg);
+}
+
+.icon-menu.hidden {
+  visibility: hidden;
+}
+.icon-menu.show {
+  visibility: unset;
+}
+.icon-sandwsish svg {
+  position: relative;
+  top: -3px;
+}
+.icon-sandwsish {
+  opacity: 0.8;
+  transition: background-color 0.1s ease-in-out;
+}
+.icon-sandwsish svg {
+  transition: all 0.3s ease-in-out;
+}
+.icon-sandwsish.close svg {
+  transform: rotate(135deg);
+}
+
+.button-twitter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  transform: rotateZ(4deg) !important;
+  padding: 1rem;
+}
+.button-twitter svg {
+  height: 1.5rem;
+  width: 1.5rem;
+  color: rgb(29, 155, 240);
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  /* https://www.gradientmagic.com/collection/popular */
+  background-image: linear-gradient(
+      246deg,
+      rgba(234, 234, 234, 0.04) 0%,
+      rgba(234, 234, 234, 0.04) 33.3%,
+      rgba(69, 69, 69, 0.04) 33.3%,
+      rgba(69, 69, 69, 0.04) 66.6%,
+      rgba(189, 189, 189, 0.04) 66.6%,
+      rgba(189, 189, 189, 0.04) 99.89999999999999%
+    ),
+    linear-gradient(
+      81deg,
+      rgba(126, 126, 126, 0.05) 0%,
+      rgba(126, 126, 126, 0.05) 33.3%,
+      rgba(237, 237, 237, 0.05) 33.3%,
+      rgba(237, 237, 237, 0.05) 66.6%,
+      rgba(74, 74, 74, 0.05) 66.6%,
+      rgba(74, 74, 74, 0.05) 99.89999999999999%
+    ),
+    linear-gradient(
+      14deg,
+      rgba(3, 3, 3, 0.08) 0%,
+      rgba(3, 3, 3, 0.08) 33.3%,
+      rgba(156, 156, 156, 0.08) 33.3%,
+      rgba(156, 156, 156, 0.08) 66.6%,
+      rgba(199, 199, 199, 0.08) 66.6%,
+      rgba(199, 199, 199, 0.08) 99.89999999999999%
+    ),
+    linear-gradient(
+      323deg,
+      rgba(82, 82, 82, 0.06) 0%,
+      rgba(82, 82, 82, 0.06) 33.3%,
+      rgba(179, 179, 179, 0.06) 33.3%,
+      rgba(179, 179, 179, 0.06) 66.6%,
+      rgba(212, 212, 212, 0.06) 66.6%,
+      rgba(212, 212, 212, 0.06) 99.89999999999999%
+    ),
+    linear-gradient(
+      32deg,
+      rgba(70, 70, 70, 0.02) 0%,
+      rgba(70, 70, 70, 0.02) 33.3%,
+      rgba(166, 166, 166, 0.02) 33.3%,
+      rgba(166, 166, 166, 0.02) 66.6%,
+      rgba(53, 53, 53, 0.02) 66.6%,
+      rgba(53, 53, 53, 0.02) 99.89999999999999%
+    ),
+    linear-gradient(
+      38deg,
+      rgba(129, 129, 129, 0.09) 0%,
+      rgba(129, 129, 129, 0.09) 33.3%,
+      rgba(38, 38, 38, 0.09) 33.3%,
+      rgba(38, 38, 38, 0.09) 66.6%,
+      rgba(153, 153, 153, 0.09) 66.6%,
+      rgba(153, 153, 153, 0.09) 99.89999999999999%
+    ),
+    linear-gradient(
+      63deg,
+      rgba(51, 51, 51, 0.02) 0%,
+      rgba(51, 51, 51, 0.02) 33.3%,
+      rgba(12, 12, 12, 0.02) 33.3%,
+      rgba(12, 12, 12, 0.02) 66.6%,
+      rgba(158, 158, 158, 0.02) 66.6%,
+      rgba(158, 158, 158, 0.02) 99.89999999999999%
+    ),
+    linear-gradient(
+      227deg,
+      rgba(63, 63, 63, 0.03) 0%,
+      rgba(63, 63, 63, 0.03) 33.3%,
+      rgba(9, 9, 9, 0.03) 33.3%,
+      rgba(9, 9, 9, 0.03) 66.6%,
+      rgba(85, 85, 85, 0.03) 66.6%,
+      rgba(85, 85, 85, 0.03) 99.89999999999999%
+    ),
+    linear-gradient(
+      103deg,
+      rgba(247, 247, 247, 0.07) 0%,
+      rgba(247, 247, 247, 0.07) 33.3%,
+      rgba(93, 93, 93, 0.07) 33.3%,
+      rgba(93, 93, 93, 0.07) 66.6%,
+      rgba(208, 208, 208, 0.07) 66.6%,
+      rgba(208, 208, 208, 0.07) 99%
+    ),
+    linear-gradient(0deg, #0b91d7, #6efc29);
+}

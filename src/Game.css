@@ -1,0 +1,29 @@
+section {
+  margin: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 10rem);
+  grid-template-rows: repeat(8, 10rem);
+  justify-content: center;
+  grid-gap: 0.5rem;
+  perspective: 800px;
+}
+@media screen and (min-width: 800px) {
+  section {
+    grid-template-columns: repeat(4, 9rem);
+    grid-template-rows: repeat(4, 9rem);
+    grid-gap: 0.5rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  section {
+    grid-template-columns: repeat(4, 12rem);
+    grid-template-rows: repeat(4, 12rem);
+    grid-gap: 1rem;
+  }
+}
+
+.game-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
