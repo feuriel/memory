@@ -1,0 +1,74 @@
+.memory-card {
+  position: relative;
+  border-radius: 6px;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease-in-out;
+  box-shadow: rgba(13, 13, 13, 0.5) 0px 5px 10px;
+}
+@media screen and (min-width: 800px) {
+  .memory-card {
+    transition: transform 1.7s cubic-bezier(0.055, 0.93, 0.3, 1);
+  }
+}
+
+.memory-card:not(.toggle):hover {
+  filter: brightness(1.3);
+}
+
+.memory-card.toggle {
+  transform: rotateY(180deg);
+}
+
+.memory-card .face,
+.memory-card .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+}
+
+.memory-card .face {
+  object-fit: cover;
+  transform: rotateY(180deg);
+}
+
+.memory-card.done.player-1 {
+  border: 3px solid #3526d7a8;
+}
+
+.memory-card.done.player-2 {
+  border: 3px solid #cfd726cc;
+}
+
+.memory-card .back {
+  backface-visibility: hidden;
+  background-image: radial-gradient(
+      circle at 53% 90%,
+      rgba(165, 165, 165, 0.03) 0%,
+      rgba(165, 165, 165, 0.03) 50%,
+      rgba(32, 32, 32, 0.03) 50%,
+      rgba(32, 32, 32, 0.03) 100%
+    ),
+    radial-gradient(
+      circle at 71% 74%,
+      rgba(191, 191, 191, 0.03) 0%,
+      rgba(191, 191, 191, 0.03) 50%,
+      rgba(68, 68, 68, 0.03) 50%,
+      rgba(68, 68, 68, 0.03) 100%
+    ),
+    radial-gradient(
+      circle at 70% 13%,
+      rgba(74, 74, 74, 0.03) 0%,
+      rgba(74, 74, 74, 0.03) 50%,
+      rgba(116, 116, 116, 0.03) 50%,
+      rgba(116, 116, 116, 0.03) 100%
+    ),
+    radial-gradient(
+      circle at 83% 61%,
+      rgba(13, 13, 13, 0.03) 0%,
+      rgba(13, 13, 13, 0.03) 50%,
+      rgba(27, 27, 27, 0.03) 50%,
+      rgba(27, 27, 27, 0.03) 100%
+    ),
+    linear-gradient(135deg, rgb(176, 49, 156), rgb(251, 15, 99));
+}
