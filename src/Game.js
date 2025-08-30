@@ -1,18 +1,19 @@
-import Card from './Card.js';
+import Card from "./Card.js";
+import "./Game.css";
 
 //import './Game.css';
-var link = document.createElement('link');
-link.rel = 'stylesheet';
-link.type = 'text/css';
-link.href = 'Game.css';
-document.getElementsByTagName('HEAD')[0].appendChild(link);
+// var link = document.createElement("link");
+// link.rel = "stylesheet";
+// link.type = "text/css";
+// link.href = "Game.css";
+// document.getElementsByTagName("HEAD")[0].appendChild(link);
 
 export default class Game {
   constructor({ lifeNumber = 10, handleLifeNumber }) {
     this._handleLifeNumber = handleLifeNumber;
-    this.container = document.createElement('div');
-    this.container.classList.add('game-grid');
-    this.section = document.createElement('section');
+    this.container = document.createElement("div");
+    this.container.classList.add("game-grid");
+    this.section = document.createElement("section");
     this.container.appendChild(this.section);
     this._initialLifeNumber = lifeNumber;
     this._lifeNumber = lifeNumber;
@@ -36,7 +37,7 @@ Game.prototype.hardReset = function () {
   let cards = this.getRandomizedCards();
   let i = 0;
   this._cards = [];
-  this.section.innerHTML = '';
+  this.section.innerHTML = "";
   for (i = 0; i < cards.length; i++) {
     let cardComponent = new Card(cards[i]);
     this._cards.push(cardComponent);
@@ -57,14 +58,14 @@ Game.prototype.softReset = function () {
 Game.prototype.getRandomizedCards = function () {
   let picsumIds = [237, 111, 41, 400, 204, 940, 530, 250];
   let alts = [
-    'coucou',
-    'coucou2',
-    'coucou3',
-    'rahrar',
-    'hellow',
-    'a picture of smtg',
-    'hey a picture',
-    'deeeemn',
+    "coucou",
+    "coucou2",
+    "coucou3",
+    "rahrar",
+    "hellow",
+    "a picture of smtg",
+    "hey a picture",
+    "deeeemn",
   ];
   let arr = [];
   let i = 0;
@@ -94,7 +95,7 @@ Game.prototype.getRandomizedCards = function () {
         },
         onAfterClick: (idx) => {
           if (this._clickedCards.length === 2) {
-            console.log('start onAfterClick');
+            console.log("start onAfterClick");
             let aux = this.checkCards();
             if (aux === 0) {
               this._clickedCards = [];
@@ -106,7 +107,7 @@ Game.prototype.getRandomizedCards = function () {
                 window.alert(
                   `Congrats ! You complete the Memory with only ${this._step} mistakes ! You rock 🤘😎🤘`
                 );
-                window.localStorage.setItem('memory_steps', this._step);
+                window.localStorage.setItem("memory_steps", this._step);
               }, 100);
             } else {
               setTimeout(() => {
