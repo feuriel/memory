@@ -152,18 +152,18 @@ document.getElementById("are-you-a-cheater").onclick = () => {
   }
 };
 
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker
-    .register("./sw.js")
-    .then((reg) => {
-      // registration worked
-      console.log("success registering Service Worker");
-    })
-    .catch((error) => {
-      // registration failed
-      console.log("Error : " + error);
-    });
-}
+// if ("serviceWorker" in navigator) {
+//   navigator.serviceWorker
+//     .register("./sw.js")
+//     .then((reg) => {
+//       // registration worked
+//       console.log("success registering Service Worker");
+//     })
+//     .catch((error) => {
+//       // registration failed
+//       console.log("Error : " + error);
+//     });
+// }
 
 document.getElementById("date").innerText = new Date().getFullYear();
 

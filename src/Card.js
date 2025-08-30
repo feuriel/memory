@@ -1,9 +1,9 @@
 import "./Card.css";
-// var link = document.createElement('link');
-// link.rel = 'stylesheet';
-// link.type = 'text/css';
-// link.href = 'Card.css';
-// document.getElementsByTagName('HEAD')[0].appendChild(link);
+// var link = document.createElement("link");
+// link.rel = "stylesheet";
+// link.type = "text/css";
+// link.href = "Card.css";
+// document.getElementsByTagName("HEAD")[0].appendChild(link);
 
 export default class Card {
   constructor(imageobj) {

@@ -1,6 +1,12 @@
 import Card from "./Card.js";
 import "./Game.css";
 
+// var link = document.createElement("link");
+// link.rel = "stylesheet";
+// link.type = "text/css";
+// link.href = "Game.css";
+// document.getElementsByTagName("HEAD")[0].appendChild(link);
+
 export default class Game {
   constructor({ lifeNumber = 10, handleLifeNumber }) {
     this._handleLifeNumber = handleLifeNumber;
