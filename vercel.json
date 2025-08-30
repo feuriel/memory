@@ -1,11 +1,11 @@
 {
   "headers": [
     {
-      "source": "/assets/(.*)\\.js$",
+      "source": "/assets/.+\\.js$",
       "headers": [
         {
           "key": "Content-Type",
-          "value": "application/javascript"
+          "value": "application/javascript; charset=utf-8"
         },
         {
           "key": "X-Content-Type-Options",
@@ -14,11 +14,11 @@
       ]
     },
     {
-      "source": "/assets/(.*)\\.mjs$",
+      "source": "/assets/.+\\.mjs$",
       "headers": [
         {
           "key": "Content-Type",
-          "value": "application/javascript"
+          "value": "application/javascript; charset=utf-8"
         },
         {
           "key": "X-Content-Type-Options",
@@ -27,11 +27,11 @@
       ]
     },
     {
-      "source": "/assets/(.*)\\.css$",
+      "source": "/assets/.+\\.css$",
       "headers": [
         {
           "key": "Content-Type",
-          "value": "text/css"
+          "value": "text/css; charset=utf-8"
         },
         {
           "key": "X-Content-Type-Options",
